@@ -1,0 +1,79 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background-color: #008000;
+}
+
+.highlight{
+  background:#FFFF33;
+}
+
+.stage {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px;
+  width: 520px;
+  height: 520px;
+}
+
+.square {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  border: solid black;
+  border-width: 0 5px 5px 0;
+  cursor: pointer;;
+}
+
+.square:nth-child(-n + 8) {
+  border-width: 5px 5px 5px 0;
+}
+
+.square:nth-child(8n + 1) {
+  border-width: 0 5.2px 5.2px 5.2px;
+}
+
+.square:first-child {
+  border-width: 5px;
+}
+
+.stone {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 55px;
+  height: 55px;
+  border-radius: 28px;
+}
+
+.stone[data-state="0"] {
+  display: none;
+}
+
+.stone[data-state="1"] {
+  background-color: black;
+}
+
+.stone[data-state="2"] {
+  background-color: white;
+}
+
+#square-template {
+  display: none;
+} 
+
+#current-turn{
+  font-size: 24px;
+  font-weight: bold;  /*太字*/
+  margin-top: 20px;   /*上に余白*/
+}
+
+#result{
+  font-size: 28px;
+  font-weight: bold;  /*太字*/
+  color:yellow;
+  margin-top: 20px;   /*上に余白*/
+}
